@@ -1,0 +1,7 @@
+torch>=2.3
+transformers>=4.53
+accelerate>=0.33
+datasets>=2.20
+einops>=0.8
+numpy>=1.26
+tqdm>=4.66
