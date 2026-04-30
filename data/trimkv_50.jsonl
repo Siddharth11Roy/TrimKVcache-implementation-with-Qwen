@@ -1,0 +1,50 @@
+{"text": "A memory-bounded language model should keep facts that are useful later in the generation."}
+{"text": "The Eiffel Tower is in Paris, and a question about its city should preserve that earlier token."}
+{"text": "In a long story, the name of the main character can matter again near the ending."}
+{"text": "KV cache compression tries to reduce memory while preserving the tokens needed for attention."}
+{"text": "Retention scores decay over time, but important tokens can still remain in the cache."}
+{"text": "A model answering a math problem may need to remember the original numbers after several steps."}
+{"text": "Some tokens are structural, such as punctuation and formatting, while others carry factual content."}
+{"text": "The TrimKV gate predicts whether a token should last under a fixed cache budget."}
+{"text": "Training the gate with a capacity penalty encourages the expected cache size to stay small."}
+{"text": "A short sanity dataset cannot prove benchmark quality, but it can reveal crashes and shape errors."}
+{"text": "A user asks where the bridge is located. The earlier sentence said the Golden Gate Bridge is in San Francisco."}
+{"text": "Long-context reasoning often depends on a small number of facts spread across many filler sentences."}
+{"text": "The cache should not keep every repeated word when a compact set of useful facts is enough."}
+{"text": "When the memory budget is tight, eviction should prefer stale and low-value tokens."}
+{"text": "A retention gate is useful because it assigns importance when a token is created, not only after attention is computed."}
+{"text": "The recipe starts with flour, salt, and water. Later instructions depend on remembering those ingredients."}
+{"text": "In a dialogue, the speaker's preference can appear early and affect the final recommendation."}
+{"text": "A document may mention that Alice owns the red notebook, and a later question may ask who owns it."}
+{"text": "The capital of Japan is Tokyo, so the token Tokyo should remain available for location questions."}
+{"text": "Compressing the KV cache is different from shortening the prompt because generation still needs selected old states."}
+{"text": "A low retention score means the token can decay quickly as decoding moves forward."}
+{"text": "A high retention score means the token can survive longer under the same memory budget."}
+{"text": "The model should remember that the conference deadline is Friday even after reading several unrelated details."}
+{"text": "For arithmetic, the numbers 17 and 23 should be retained until the final sum is produced."}
+{"text": "For summarization, names, dates, places, and causal events are often more useful than repeated function words."}
+{"text": "A fixed-size KV cache must decide which old tokens to evict once new tokens arrive."}
+{"text": "TrimKV uses a learned gate so the model can discover token utility from data instead of a hand-written rule."}
+{"text": "The capacity loss is soft: it penalizes expected occupancy above the budget during training."}
+{"text": "A good cache policy should keep sink tokens, important entities, and useful recent context when possible."}
+{"text": "A bad cache policy may evict the only token that answers a later factual question."}
+{"text": "The book title was The Silent River, and the final answer should preserve that exact title."}
+{"text": "The hospital appointment is at 9 AM, and later scheduling text depends on that time."}
+{"text": "A generated proof should keep assumptions available while deriving later conclusions."}
+{"text": "The weather report said rain begins after sunset, which matters for the final travel advice."}
+{"text": "In code completion, variable names introduced earlier can be more important than comments far away."}
+{"text": "Cache eviction should be deterministic for a fixed model state and prompt during greedy decoding."}
+{"text": "A model can use retention bias during training and hard eviction during inference."}
+{"text": "The gate output beta lies between zero and one, making exponential decay simple and stable."}
+{"text": "Using log beta avoids numerical underflow when token ages become large."}
+{"text": "Grouped-query attention shares KV heads across multiple query heads, so the cache must support that shape."}
+{"text": "A training example should contain enough context for the gate to see which tokens become useful later."}
+{"text": "The answer to the riddle was candle, so the token candle should not disappear before the conclusion."}
+{"text": "The customer asked for a vegan meal, and later recommendations must respect that constraint."}
+{"text": "The route goes from Delhi to Jaipur, and the destination token Jaipur should remain accessible."}
+{"text": "In legal text, definitions introduced early can affect clauses that appear many paragraphs later."}
+{"text": "In scientific writing, units such as meters, seconds, and kilograms can be critical to later calculations."}
+{"text": "A compressed cache should reduce memory use without changing the model's output too much."}
+{"text": "The teacher model provides a target distribution so the student with TrimKV can preserve quality."}
+{"text": "The gate checkpoint stores only the small retention modules, not a full copy of the base language model."}
+{"text": "This fifty-example dataset is still small, but it gives a better training smoke test than ten examples."}

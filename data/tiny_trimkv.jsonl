@@ -1,0 +1,10 @@
+{"text": "A memory-bounded language model should keep facts that are useful later in the generation."}
+{"text": "The Eiffel Tower is in Paris, and a question about its city should preserve that earlier token."}
+{"text": "In a long story, the name of the main character can matter again near the ending."}
+{"text": "KV cache compression tries to reduce memory while preserving the tokens needed for attention."}
+{"text": "Retention scores decay over time, but important tokens can still remain in the cache."}
+{"text": "A model answering a math problem may need to remember the original numbers after several steps."}
+{"text": "Some tokens are structural, such as punctuation and formatting, while others carry factual content."}
+{"text": "The TrimKV gate predicts whether a token should last under a fixed cache budget."}
+{"text": "Training the gate with a capacity penalty encourages the expected cache size to stay small."}
+{"text": "A short sanity dataset cannot prove benchmark quality, but it can reveal crashes and shape errors."}
